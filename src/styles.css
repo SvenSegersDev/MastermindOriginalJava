@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "Starborn";
+    src: url("/fonts/Starborn.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Friem";
+    src: url("/fonts/Friem-Regular.ttf") format("truetype");
+}
+
+.main-container{
+    -fx-background-color: #60a8db; /* bright green*/
+    -fx-pref-width: 300px;  /* Preferred width */
+    -fx-min-width: 300px;   /* Minimum width */
+    -fx-max-width: 300px;   /* Maximum width */
+    -fx-pref-height: 500px;
+        -fx-min-height: 500px;
+        -fx-max-height: 500px;
+        -fx-alignment: center;
+        -fx-background-image: url("/images/main-bg2.png"); /* Path to the image */
+            -fx-background-repeat: no-repeat; /* Optional: Prevent tiling */
+            -fx-background-size: cover; /* Optional: Scale the image to fill the scene */
+}
+
+/* welcome screen layout */
+.ws-vbox-container{
+    -fx-pref-height: 300px;
+    -fx-min-height: 300px;
+    -fx-max-height: 300px;
+    -fx-pref-width: 300px;
+    -fx-min-width: 300px;   /* Minimum width */
+    -fx-max-width: 300px;
+   -fx-alignment: center;
+}
+
+.ws-welcome-text{
+    -fx-font-family:"Starborn";
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+        -fx-alignment: center;
+        -fx-pref-width: 300px;
+        -fx-min-width: 300px;
+        -fx-max-width:300px;
+        -fx-min-height: 150px;
+}
+
+.ws-hbox-button-container{
+    -fx-alignment: center;
+        -fx-pref-width: 2500px;
+        -fx-min-width: 250px;
+        -fx-max-width:250px;
+        -fx-min-height: 150px;
+        -fx-spacing: 75px;
+}
+
+.ws-new-game-button{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-family:"Starborn";
+    -fx-background-color: transparent; /* Remove the background */
+        -fx-border-color: transparent;    /* Remove the border */
+        -fx-padding: 0;                   /* Remove padding */
+        -fx-focus-color: transparent;     /* Remove focus ring when clicked */
+        -fx-faint-focus-color: transparent; /* Remove faint focus effect */
+}
+
+.ws-quit-game-button{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-family:"Starborn";
+    -fx-background-color: transparent; /* Remove the background */
+        -fx-border-color: transparent;    /* Remove the border */
+        -fx-padding: 0;                   /* Remove padding */
+        -fx-focus-color: transparent;     /* Remove focus ring when clicked */
+        -fx-faint-focus-color: transparent; /* Remove faint focus effect */
+}
+
+/* user grid  style */
+.ug-main-container-vbox{
+    -fx-alignment: center;
+    -fx-max-width: 300px;
+    -fx-min-width: 300px;
+    -fx-padding: 25 60 25 60;
+    -fx-background-image: url("/images/transparantBlue.png"); /* Path to the image */
+            -fx-background-repeat: no-repeat; /* Optional: Prevent tiling */
+             -fx-background-size: stretch;
+}
+
+/* user code style - this only applies to the HBox containing 4 colors of a user row - not the result grid*/
+.row-user-code{
+    -fx-spacing: 5px;
+}
+
+/* user row hbox - this is the hbox that contains the user code as well as the result grid */
+.userrow-hbox{
+    -fx-padding: 2 0 2 0;
+}
+
+.result-grid{
+    -fx-padding: 0 0 0 5;
+}
+
+.secret-code{
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-image: url("/images/codeCover.png");
+    -fx-background-size: stretch;
+    -fx-max-width: 30px;
+    -fx-alignment: center;
+}
+
+.grid-buttons-box{
+    -fx-alignment:center;
+}
+
+.verify-row-button{
+    -fx-padding: 2 15 2 7;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+        -fx-font-family:"Starborn";
+        -fx-background-color: transparent; /* Remove the background */
+            -fx-border-color: transparent;    /* Remove the border */
+            -fx-focus-color: transparent;     /* Remove focus ring when clicked */
+            -fx-faint-focus-color: transparent; /* Remove faint focus effect */
+}
+
+.quit-to-main-menu-button{
+-fx-text-fill: #ffffff;
+-fx-font-size: 14px;
+    -fx-font-family:"Starborn";
+    -fx-background-color: transparent; /* Remove the background */
+        -fx-border-color: transparent;    /* Remove the border */
+        -fx-padding: 2 15 2 7;                /* Remove padding */
+        -fx-focus-color: transparent;     /* Remove focus ring when clicked */
+        -fx-faint-focus-color: transparent; /* Remove faint focus effect */
+}
+
+.info-label{
+    -fx-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-family:"Friem";
+}
+
+.info-container{
+    -fx-alignment: center;
+     -fx-pref-width: 100%;  /* Ensure it stretches to full width */
+     -fx-min-height: 50px;
+     -fx-max-height: 50px;
+}
