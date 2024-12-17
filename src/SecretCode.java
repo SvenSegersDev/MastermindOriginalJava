@@ -23,7 +23,6 @@ public class SecretCode {
 
     public static ArrayList<Color> createSecretCode(){
         Random random = new Random();
-       // boolean foundFour = false;
         int counter = 0;
         ArrayList<Integer> listOfIntegers = new ArrayList<>();
         int randomInt;

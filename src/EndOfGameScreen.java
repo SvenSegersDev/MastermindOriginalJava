@@ -40,14 +40,6 @@ public void addClickListeners(){
         return endOfGameScreen;
     }
 
-    public void setWinLossLabel(boolean hasWon) {
-        if(hasWon){
-            winLossLabel.setText("You have lost the game...");
-        }else{
-            winLossLabel.setText("You have won the game!");
-        }
-    }
-
     public void setEndOfGameScreenVisible(boolean setVisibility){
         if(setVisibility){
             getEndOfGameScreen().setVisible(true);

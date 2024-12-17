@@ -8,7 +8,7 @@ public class UserGrid {
 
     private VBox verticalGrid = new VBox();
     private ArrayList<UserRow> userRowList = new ArrayList<>();
-    private SecretCode secretCode;
+    private SecretCode secretCode = new SecretCode();
     private HBox secretOverLay = new HBox();
     private ScreenController controller;
     private HBox buttonsBox = new HBox();
@@ -44,7 +44,6 @@ public class UserGrid {
             verticalGrid.getChildren().add(userRow.getUserRowHBox());
             userRowList.add(userRow);
         }
-        this.secretCode = new SecretCode();
         verticalGrid.getChildren().add(secretCode.getSecretCodeVisual());
         secretCode.displaySecretCode(true);
         buttonsBox.getChildren().add(verifyRow);
@@ -61,7 +60,6 @@ public class UserGrid {
     public void handleClickOnVerifyButton() {
         Code userCode = getUserRowList().get(enabledRow).getUserCode();
 
-        //todo ==> not sure but here we need to check the current row inputted by the user
         if (!Verificator.isCodeComplete(getUserRowList().get(enabledRow).getUserCode())) {
             informationLabel.setLabelText("Complete the row before clicking the check button...");
         } else {
@@ -70,17 +68,10 @@ public class UserGrid {
             userRowList.get(enabledRow).getCodeResult().updateColors(correctColors, otherCorrect);
             userRowList.get(enabledRow).getUserCode().setRowModifiable(false);
             if (Verificator.isCodeCorrect(userCode, secretCode)) {
-                //todo --> implement handling when the game is WON
-                // display the end of game screen
-                //controller.showEndOfGameScreen(true);
                 informationLabel.setLabelText("You have cracked the code !");
                 secretCode.displaySecretCode(true);
-                // todo ==> this includes a reset of the grid AND of the secret code
-                System.out.println("The game is over...");
             } else {
                 if (getEnabledRow() == 9) {
-                    //todo END OF GAME - YOU LOST
-                    //controller.showEndOfGameScreen(false);
                     informationLabel.setLabelText("Too bad. You did not crack the code.");
                     secretCode.displaySecretCode(true);
                 } else {

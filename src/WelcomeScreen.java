@@ -9,39 +9,40 @@ public class WelcomeScreen {
     private VBox welcomeScreen = new VBox();
     private HBox horizontalButtonContainer = new HBox();
     private ScreenController controller;
-    private Button newGameButton = new Button("PLAY");;
-    private Button quitGameButton = new Button("QUIT");;
-    private Label welcomeText = new Label("Welcome\n    to\nMastermind");;
+    private Button newGameButton = new Button("PLAY");
+    ;
+    private Button quitGameButton = new Button("QUIT");
+    ;
+    private Label welcomeText = new Label("Welcome\n    to\nMastermind");
+    ;
 
 
-
-    public WelcomeScreen(ScreenController controller){
+    public WelcomeScreen(ScreenController controller) {
         this.controller = controller;
         addListeners();
 
         welcomeScreen.getChildren().add(0, welcomeText);
-        horizontalButtonContainer.getChildren().add(0,newGameButton);
+        horizontalButtonContainer.getChildren().add(0, newGameButton);
         horizontalButtonContainer.getChildren().add(1, quitGameButton);
-    welcomeScreen.getChildren().add(1,horizontalButtonContainer);
+        welcomeScreen.getChildren().add(1, horizontalButtonContainer);
         addToCss();
     }
 
-    public VBox getWelcomeScreenVisual(){
+    public VBox getWelcomeScreenVisual() {
         return welcomeScreen;
     }
 
 
-
-    public void showHideWelcomeScreen(boolean show){
-        if(show) {
+    public void showHideWelcomeScreen(boolean show) {
+        if (show) {
             welcomeScreen.setVisible(true);
-        }else{
+        } else {
             welcomeScreen.setVisible(false);
         }
 
     }
 
-    public void addToCss(){
+    public void addToCss() {
         welcomeScreen.getStyleClass().add("ws-vbox-container");
         horizontalButtonContainer.getStyleClass().add("ws-hbox-button-container");
         welcomeText.getStyleClass().add("ws-welcome-text");
@@ -49,7 +50,7 @@ public class WelcomeScreen {
         quitGameButton.getStyleClass().add("ws-quit-game-button");
     }
 
-    public void addListeners(){
+    public void addListeners() {
         newGameButton.setOnMouseClicked(mouseEvent -> {
             controller.getUserGrid().resetGrid();
             controller.hideWelcomeScreen();
